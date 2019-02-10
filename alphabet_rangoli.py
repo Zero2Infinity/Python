@@ -46,9 +46,9 @@ def rangoli_3(size):
     alpha = string.ascii_lowercase[:size]
     
     lines = []
-    for i in reversed(range(size)):
-        lines.append('-'.join(alpha[size-1:i:-1] + alpha[i:size+1]).center(width, '-'))
-    
+    for i in range(size):
+        #lines.append('-'.join(alpha[size-1:i:-1] + alpha[i:size+1]).center(width, '-'))
+        lines.append('-'.join(alpha[-1:-2-i:-1] + alpha[size-i:size:1]).center(width, '-'))
     print ('\n'.join(lines[:size-1] + lines[size-1::-1]))
     
 if __name__ == '__main__':
