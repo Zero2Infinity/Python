@@ -4,7 +4,7 @@ if __name__ == '__main__':
     s = set(nums)
     ops = int(input())
     for _ in range(ops):
-        inp = input().split()
-        getattr(s, inp[0])(*inp[1] if len(inp) > 1 else [])
-        print (s)
+        inp, *args = input().split()
+        getattr(s, inp)(*map(int, args))
+        print (sum(s))
     
